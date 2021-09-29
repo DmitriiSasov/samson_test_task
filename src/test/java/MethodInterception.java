@@ -18,7 +18,7 @@ public class MethodInterception {
 
 
     private MainPage createPage(Class clazz) {
-        return null;
+        return (MainPage) Proxy.newProxyInstance(clazz.getClassLoader(), new Class[]{clazz}, new MyProxy());
     }
 
 
